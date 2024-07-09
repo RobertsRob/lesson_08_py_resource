@@ -252,7 +252,9 @@ image = ImageTk.PhotoImage(resized_image)
 canvas.create_image(100, 100, anchor=tk.NW, image=image)
 
 
-
+# функция печатающая значение scale
+def pm_scale_change(value):
+    print("Значение:", value)
 # Scale widget
 scale = tk.Scale(root, from_=0, to=100, orient=tk.HORIZONTAL)
 scale.pack(pady=5)
@@ -271,7 +273,7 @@ scale.config(
     resolution=1,            # Шаг изменения значения
     sliderlength=30,         # Длина ползунка
     state=tk.NORMAL,         # Состояние (NORMAL или DISABLED)
-    command=lambda value: print("Значение:", value) # Команда при изменении значения
+    command=pm_scale_change  # Команда при изменении значения
 )
 
 
